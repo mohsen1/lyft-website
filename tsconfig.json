@@ -4,12 +4,11 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
-        "target": "esnext",
+        "target": "es2015",
         "strict": true,
         "jsx": "react",
+        "downlevelIteration": true,
         "lib": ["dom", "es2017"]
     },
-    "include": [
-        "./src/**/*"
-    ]
+    "include": ["./src/**/*"]
 }
