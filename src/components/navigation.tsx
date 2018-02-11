@@ -53,13 +53,13 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         };
     }
 
-    private onCategoryClicked = async (category: string | symbol, element: HTMLAnchorElement) => {
+    private onCategoryClicked = (category: string | symbol, element: HTMLAnchorElement) => {
         this.props.onCategoryChanged(category);
         this.setState({ selectedCategory: category, isTransitioning: true });
-        await sleep(0);
-        this.setSelectedCategoryDivPositionAndDimentions(element);
-        await sleep(Navigation.TRANSITION_DURATION_MS);
-        this.setState({ isTransitioning: false });
+        sleep(0)
+            .then(() => this.setSelectedCategoryDivPositionAndDimentions(element))
+            .then(() => sleep(Navigation.TRANSITION_DURATION_MS))
+            .then(() => this.setState({ isTransitioning: false }));
     };
 
     private setSelectedCategoryDivPositionAndDimentions(element: HTMLAnchorElement) {
