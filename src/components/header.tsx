@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
     position: sticky;
     top: 0;
     z-index: 2;
-    background: ${colors.charcoal};
+    background: ${colors.dove};
     color: ${colors.white};
     margin-bottom: '1.45rem';
     display: flex;
